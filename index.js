@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
-import { ContainerM, ContainerInputM } from "./styles";
+import { Container, ContainerInput } from "./styles";
 
 export default function index({ titulo, placeholder, type, icon: Icon }) {
-    const [focus, setFocus] = useState(false);
+  const [focus, setFocus] = useState(false);
 
-    return (
-        <ContainerM>
-            <div>{titulo}</div>
-            <ContainerInputM focus={focus}>
-                {Icon && <Icon />}
-                <input
-                    onFocus={() => setFocus(true)}
-                    onBlur={() => setFocus(false)}
-                    type={type}
-                    placeholder={placeholder}
-                ></input>
-            </ContainerInputM>
-        </ContainerM>
-    );
+  return (
+    <Container>
+      <div>{titulo}</div>
+      <ContainerInput focus={focus}>
+        {Icon && <Icon />}
+        <input
+          onFocus={() => setFocus(true)}
+          onBlur={() => setFocus(false)}
+          type={type}
+          placeholder={placeholder}
+        ></input>
+      </ContainerInput>
+    </Container>
+  );
 }

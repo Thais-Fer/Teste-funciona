@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const ContainerM = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
@@ -11,7 +11,8 @@ export const ContainerM = styled.div`
   }
 `;
 
-export const ContainerInputM = styled.div`
+export const ContainerInput = styled.div`
+  
   margin-bottom: 5px;
   text-align: left;
   display: flex;
@@ -19,19 +20,18 @@ export const ContainerInputM = styled.div`
   background-color: white;
   padding-left: 10px;
   border: 0.5px solid lightgrey;
-  width: 40%;
-  height: 35px;
+  height: 40px;
 
   ${(props) =>
-        props.focus &&
-        css`
+    props.focus &&
+    css`
       border-color: #b38c89;
       color: #b38c89;
     `}
   input {
     border: 2px solid white;
     flex: 1;
-    height: 20px;
+    height: 30px;
     padding-left: 10px;
   }
 
