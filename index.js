@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import InputPandora from "../../components/InputPandora";
-import InputPandoraMedio from "../../components/InputPandoraMedio";
 import LOGO from "../../assets/LOGO.png";
 import { FiMail, FiLock } from "react-icons/fi";
 
-import { Container, CaixaCadastro, CaixaTitulos, Inf, Logo, ImgLogo, ContainerPT2 } from "./styles";
+import { Container, CaixaLogin, CaixaTitulos, Inf, Logo, TitulosPequenos, ImgLogo } from "./styles";
 
 export default function index() {
   return (
@@ -16,50 +15,48 @@ export default function index() {
       </Inf> */}
 
       <Logo>
+
         <ImgLogo> <img src={LOGO} alt="pandora" /></ImgLogo>
       </Logo>
 
-      <CaixaCadastro>
+      <CaixaLogin>
         <CaixaTitulos>
-          <div>CRIE SUA CONTA PANDORA</div>
+          <div>JÁ TEM UMA CONTA PANDORA?</div>
           <span>
-            tenha acesso a promoções exclusivas, fique por dentro das novidades e acompanhe suas compras.
+            faça seu login agora para acompanhar seus pedido, ter acesso a
+            ofertas exclusicas e muito mais.
           </span>
         </CaixaTitulos>
+
         <InputPandora
           titulo="E-mail"
-          placeholder="digite seu e-mail (email@email.dominio)"
+          placeholder="Digite seu login"
+          icon={FiMail}
         />
 
         <InputPandora
-          titulo="CPF"
-          placeholder="999.999.999-99"
+          icon={FiLock}
+          titulo="Senha"
+          type="password"
+          required
+          placeholder="Digite sua senha"
         />
-        <InputPandora
-          titulo="Nome Completo"
-          placeholder="digite seu nome completo"
-        />
-        <ContainerPT2>
-          <div>
-            <InputPandoraMedio
-              titulo="Telefone celular"
-              placeholder="(xx) xxxxx-xxxx"
-            />
 
-            <InputPandoraMedio
-              titulo="Senha"
-              placeholder="Digite sua senha"
-            />
+        <a href="forgot">Esqueci minha senha</a>
+        <a href="forgot">não tem senha? cadastre agora</a>
 
-            <InputPandoraMedio
-              titulo="Confirmar senha"
-              placeholder="Confirme a senha"
-            />
-          </div>
-        </ContainerPT2>
 
-        <button>CADASTRE-SE</button>
-      </CaixaCadastro>
+        <button>ENTRAR</button>
+
+
+        <TitulosPequenos>
+          <div><span>------------------------------------- É novo por aqui? -------------------------------------</span></div>
+        </TitulosPequenos>
+
+        <Link to="/cadastro">
+          <button>CRIAR CONTA</button>
+        </Link>
+      </CaixaLogin>
     </Container>
   );
 }

@@ -28,10 +28,10 @@ export const Logo = styled.div`
   border-bottom: 0.2px solid black;
 `;
 export const ImgLogo = styled.div`
-
+ 
 `;
 
-export const CaixaCadastro = styled.div`
+export const CaixaLogin = styled.div`
   display: flex;
   flex-direction: column;
   background: #fff4f2;
@@ -40,7 +40,7 @@ export const CaixaCadastro = styled.div`
   border-radius: 20px;
   border: 0.5px solid #b38c89;
   margin-top: 30px;
-  height: 500px;
+  height: 550px;
   padding-left: 50px;
   padding-right: 50px;
   transition: background-color 0.2s;
@@ -52,7 +52,7 @@ export const CaixaCadastro = styled.div`
     color: white;
     border-radius: 50px;
     border: none;
-    margin-top: 0px;
+    margin-top: 20px;
 
     &:hover {
       background: ${shade(0.2, "#b38c89")};
@@ -72,39 +72,32 @@ export const CaixaCadastro = styled.div`
 `;
 
 export const CaixaTitulos = styled.div`
-line-height: 0.8;
-text-align: center;
-div {
+  line-height: 0.8;
   text-align: center;
-  color: #d66660;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-size: 18px;
-}
+  div {
+    text-align: center;
+    color: #d66660;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
 
-span {
-  font-size: 15px;
-  margin-top: 30px;
-  line-height: 1.5;
-}
+  span {
+    font-size: 15px;
+    margin-top: 30px;
+    line-height: 1.5;
+  }
 `;
 
 export const TitulosPequenos = styled.div`
  div{ 
+  text-align: center;
+  justify-content: left;
   font-size: 12px;
-  margin-top: 15px;
-  color: ${shade(0.2, "#D66660")}; 
+  margin-top: 40px;
+  color: ${shade(0.2, "#D66660")};
  }
-`;
+  
 
-export const ContainerPT2 = styled.div`
- 
-  div{ 
-    width: 100%;
-    display: flex;
-  }
-  span{
-    flex-wrap: wrap;
-  }
 `;
 
