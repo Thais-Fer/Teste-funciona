@@ -1,22 +1,62 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
+import InputPandora from "../../components/InputPandora";
+import LOGO from "../../assets/LOGO.png";
+import { FiMail, FiLock } from "react-icons/fi";
 
-import { ContainerM, ContainerInputM } from "./styles";
+import { Container, CaixaLogin, CaixaTitulos, Inf, Logo, TitulosPequenos, ImgLogo } from "./styles";
 
-export default function index({ titulo, placeholder, type, icon: Icon }) {
-    const [focus, setFocus] = useState(false);
+export default function index() {
+  return (
+    <Container>
+      {/* <Inf>
+        Devolução grátis em até 25 dias | 40% de desconto em fretes acima de R$
+        150,00 | Parcelamento em até 6x no cartão
+      </Inf> */}
 
-    return (
-        <ContainerM>
-            <div>{titulo}</div>
-            <ContainerInputM focus={focus}>
-                {Icon && <Icon />}
-                <input
-                    onFocus={() => setFocus(true)}
-                    onBlur={() => setFocus(false)}
-                    type={type}
-                    placeholder={placeholder}
-                ></input>
-            </ContainerInputM>
-        </ContainerM>
-    );
+      <Logo>
+
+        <ImgLogo> <img src={LOGO} alt="pandora" /></ImgLogo>
+      </Logo>
+
+      <CaixaLogin>
+        <CaixaTitulos>
+          <div>JÁ TEM UMA CONTA PANDORA?</div>
+          <span>
+            faça seu login agora para acompanhar seus pedido, ter acesso a
+            ofertas exclusicas e muito mais.
+          </span>
+        </CaixaTitulos>
+
+        <InputPandora
+          titulo="E-mail"
+          placeholder="Digite seu login"
+          icon={FiMail}
+        />
+
+        <InputPandora
+          icon={FiLock}
+          titulo="Senha"
+          type="password"
+          required
+          placeholder="Digite sua senha"
+        />
+
+        <a href="forgot">Esqueci minha senha</a>
+        <a href="forgot">não tem senha? cadastre agora</a>
+
+
+        <button>ENTRAR</button>
+
+
+        <TitulosPequenos>
+          <div><span>------------------------------------- É novo por aqui? -------------------------------------</span></div>
+        </TitulosPequenos>
+
+        <Link to="/cadastro">
+          <button>CRIAR CONTA</button>
+        </Link>
+      </CaixaLogin>
+    </Container>
+  );
 }
